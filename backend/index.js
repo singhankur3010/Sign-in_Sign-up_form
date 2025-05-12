@@ -6,17 +6,12 @@
 // require("dotenv").config();
 // const cors = require('cors');
 // const PORT = 4000;
-
 // const users = [];
-
-
 // app.use(cors({
 //     origin: 'http://localhost:5173', 
 // }));
 // app.use(express.json());
 // app.use(cookieParser());
-
-
 // const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
 
 // // Sign-up
@@ -74,16 +69,13 @@ const cookieParser = require('cookie-parser');
 require("dotenv").config();
 const cors = require('cors');
 const PORT = 4000;
-
 const users = [];
-
 app.use(cors({
     origin: 'http://localhost:5173',
     credentials: true,
 }));
 app.use(express.json());
 app.use(cookieParser());
-
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
 
 // Sign-up
@@ -98,7 +90,6 @@ app.post('/signup', async (req, res) => {
     users.push({ username, password: hashedPassword });
     res.status(201).send('User created');
 });
-
 // Sign-in 
 app.post('/signin', async (req, res) => {
     const { username, password } = req.body;
@@ -116,8 +107,6 @@ app.post('/logout', (req, res) => {
     res.clearCookie('token'); 
     res.status(200).send('Logged out successfully');
 });
-
-
 const authenticateToken = (req, res, next) => {
     const token = req.cookies.token;
     if (!token) return res.sendStatus(401);
@@ -127,8 +116,6 @@ const authenticateToken = (req, res, next) => {
         next();
     });
 };
-
-
 // app.get('/protected', authenticateToken, (req, res) => {
 //     res.send(`Hello ${req.user.username}, you are authenticated!`);
 // });
