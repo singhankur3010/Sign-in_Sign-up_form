@@ -101,8 +101,6 @@ const SignIn = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-
-
     const paperStyle = {
         padding: 20,
         height: "70vh",
@@ -182,5 +180,4 @@ const SignIn = () => {
         </Grid>
     );
 };
-
 export default SignIn;
