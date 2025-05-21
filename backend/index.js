@@ -13,11 +13,9 @@
 // app.use(express.json());
 // app.use(cookieParser());
 // const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
-
 // // Sign-up
 // app.post('/signup', async (req, res) => {
 //     const { username, password } = req.body;
-
 //     const existingUser = users.find(u => u.username === username);
 //     if (existingUser) {
 //         return res.status(400).send('User already exists');
@@ -26,7 +24,6 @@
 //     users.push({ username, password: hashedPassword });
 //     res.status(201).send('User created');
 // });
-
 // // Sign-in 
 // app.post('/signin', async (req, res) => {
 //     const { username, password } = req.body;
@@ -48,13 +45,9 @@
 //         next();
 //     });
 // };
-
-
 // app.get('/protected', authenticateToken, (req, res) => {
 //     res.send(`Hello ${req.user.username}, you are authenticated!`);
 // });
-
-
 // app.listen(PORT, () => {
 //     console.log(`Server listening on port ${PORT}`);
 // });
