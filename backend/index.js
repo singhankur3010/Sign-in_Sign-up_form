@@ -70,11 +70,9 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
-
 // Sign-up
 app.post('/signup', async (req, res) => {
     const { username, password } = req.body;
-
     const userExist = users.find(u => u.username === username);
     if (userExist) {
         return res.status(400).send('User already exists');
@@ -94,7 +92,6 @@ app.post('/signin', async (req, res) => {
     }
     res.status(401).send('Invalid credentials');
 });
-
 //logout
 app.post('/logout', (req, res) => {
     res.clearCookie('token'); 
